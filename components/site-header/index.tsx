@@ -59,7 +59,7 @@ export function SiteHeader({ onMenuClick }: SiteHeaderProps) {
           <div className="flex w-full items-center space-x-1 sm:w-auto">
             <Button
               variant="outline"
-              className="relative h-8 w-full justify-start rounded-[0.5rem] bg-muted/50 text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-40 lg:w-56 xl:w-64"
+              className="relative h-8 w-full justify-start rounded-lg bg-muted/50 text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-40 lg:w-56 xl:w-64"
               onClick={() => setOpen(true)}
             >
               搜索网站...

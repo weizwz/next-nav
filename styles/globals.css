@@ -1,21 +1,25 @@
 @import 'tailwindcss';
 
-@plugin 'tailwindcss-animate';
+.dark & {
+  --variant: dark;
+}
 
-@custom-variant dark (&:is(.dark *));
-
-@utility container {
+.container {
   margin-inline: auto;
   padding-inline: 2rem;
-  @media (width >= --theme(--breakpoint-sm)) {
+}
+@media (min-width: var(--theme--breakpoint-sm)) {
+  .container {
     max-width: none;
   }
-  @media (width >= 1600px) {
+}
+@media (min-width: 1600px) {
+  .container {
     max-width: 1600px;
   }
 }
 
-@theme {
+:root {
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
@@ -149,10 +153,11 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: var(--color-border);
   }
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--color-background);
+    color: var(--color-foreground);
   }
 }
 
