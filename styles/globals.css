@@ -156,22 +156,20 @@
   }
 }
 
-::view-transition-old(root),
-::view-transition-new(root) {
+/**
+* 黑暗模式切换动画
+* -------------------------------------------------------------------------- */
+::view-transition-old(*) {
   animation: none;
-  mix-blend-mode: normal;
 }
-
-.dark::view-transition-old(root) {
-  z-index: 1;
+::view-transition-new(*) {
+  animation: theme-transition .8s ease-in;
 }
-.dark::view-transition-new(root) {
-  z-index: 999;
-}
-
-::view-transition-old(root) {
-  z-index: 999;
-}
-::view-transition-new(root) {
-  z-index: 1;
+@keyframes theme-transition {
+  from {
+    clip-path: circle(0% at var(--darkX) var(--darkY));
+  }
+  to {
+    clip-path: circle(100% at var(--darkX) var(--darkY));
+  }
 }
