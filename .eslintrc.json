@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json.schemastore.org/eslintrc",
+  "root": true,
+  "extends": [
+    "next/core-web-vitals",
+    "prettier",
+    "plugin:tailwindcss/recommended"
+  ],
+  "plugins": ["tailwindcss"],
+  "rules": {
+    "@next/next/no-html-link-for-pages": "off",
+    "react/jsx-key": "off",
+    // 示例：禁止使用自定义类名（除了允许的）
+    "tailwindcss/no-custom-classname": [
+      "warn",
+      {
+        "whitelist": ["custom-class", "prefix-*"]
+      }
+    ],
+    // 确保没有冲突的 Tailwind 类（如 `w-full` 和 `w-1/2` 同时存在）
+    "tailwindcss/no-contradicting-classname": "error"
+  },
+  "settings": {
+    "tailwindcss": {
+      "callees": ["cn"],
+      // 指定你的 tailwind.config.js 文件路径（如果非标准位置）
+      "config": "tailwind.config.js"
+    },
+    "next": {
+      "rootDir": ["./"]
+    }
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "parser": "@typescript-eslint/parser"
+    }
+  ]
+}
