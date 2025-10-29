@@ -3,7 +3,7 @@
   "style": "default",
   "tailwind": {
     "config": "tailwind.config.ts",
-    "css": "app/globals.css",
+    "css": "app/globals.scss",
     "baseColor": "zinc",
     "cssVariables": true
   },

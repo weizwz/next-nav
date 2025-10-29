@@ -2,7 +2,7 @@
   "name": "next-nav",
   "version": "0.0.1",
   "private": true,
-  "packageManager": "pnpm@9.12.1",
+  "packageManager": "pnpm@10.20.0",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -49,6 +49,7 @@
     "postcss": "^8.4.24",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.7.1",
+    "sass": "^1.93.2",
     "tailwindcss": "^4.1.15",
     "typescript": "^5"
   }
